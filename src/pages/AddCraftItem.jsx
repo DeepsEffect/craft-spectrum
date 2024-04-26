@@ -1,6 +1,38 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 
 const AddCraftItem = () => {
+  
+  //handle add craft
+  const handleAddCraft = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const image = form.image.value;
+    const item_name = form.item_name.value;
+    const subcategory_name = form.subcategory_name.value;
+    const short_description = form.short_description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processing_time = form.processing_time.value;
+    const stock_status = form.stock_status.value;
+    const email = form.email.value;
+    const username = form.username.value;
+    const craftItem = {
+      image,
+      item_name,
+      subcategory_name,
+      short_description,
+      price,
+      rating,
+      customization,
+      processing_time,
+      stock_status,
+      email,
+      username,
+    };
+    console.log(craftItem);
+  };
+
   return (
     <div className="mx-auto">
       <Card
@@ -15,7 +47,10 @@ const AddCraftItem = () => {
           Fill the form to add a craft to your website
         </Typography>
         {/* form section */}
-        <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+        <form
+          onSubmit={handleAddCraft}
+          className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+        >
           <div className="mb-1 flex-row lg:flex justify-center items-center gap-6">
             {/* section left */}
             <section className="mb-1 flex flex-col gap-6">
@@ -48,7 +83,7 @@ const AddCraftItem = () => {
               </Typography>
               <Input
                 size="lg"
-                name="subcategory_Name"
+                name="subcategory_name"
                 placeholder="Subcategory Name"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
@@ -72,6 +107,7 @@ const AddCraftItem = () => {
               </Typography>
               <Input
                 size="lg"
+                defaultValue={"$"}
                 name="price"
                 placeholder="Enter Your Price"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -123,7 +159,7 @@ const AddCraftItem = () => {
               </Typography>
               <Input
                 size="lg"
-                name="short_description"
+                name="stock_status"
                 placeholder="In stock or Made to Order?"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
