@@ -10,20 +10,28 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../firebase/firebase.init";
 
 function Register() {
   const { registerUser, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
+
   //handle register
   const handleRegisterUser = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
+    const photo = form.photo.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    // console.log(name, email, password);
     registerUser(email, password)
       .then((userCredential) => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        });
         console.log(userCredential.user);
       })
       .catch((error) => {
@@ -89,6 +97,18 @@ function Register() {
             size="lg"
             name="email"
             placeholder="name@mail.com"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            labelProps={{
+              className: "before:content-none after:content-none",
+            }}
+          />
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Your Photo Url (optional)
+          </Typography>
+          <Input
+            size="lg"
+            name="photo"
+            placeholder="https://photourl.com"
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{
               className: "before:content-none after:content-none",

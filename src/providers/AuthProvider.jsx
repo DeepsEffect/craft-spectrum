@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.init";
@@ -58,6 +59,11 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  //signOut user
+  const LogOut = () => {
+    return signOut(auth)
+  }
+
   //passing the data as object
   const authInfo = {
     user,
@@ -66,6 +72,7 @@ const AuthProvider = ({ children }) => {
     signInWithGoogle,
     signInWithGithub,
     loginUser,
+    LogOut
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
