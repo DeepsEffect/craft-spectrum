@@ -6,8 +6,9 @@ import {
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
+import { Link, NavLink } from "react-router-dom";
 
- function Nav() {
+function Nav() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,9 +26,9 @@ import {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink href="/" className="flex items-center">
           Home
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -35,9 +36,9 @@ import {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-        All Art & craft
-        </a>
+        <NavLink to={"/allArt&Craft"} className="flex items-center">
+          All Art & craft
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -45,9 +46,9 @@ import {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-        Add Craft Item
-        </a>
+        <NavLink to={"/addCartItem"} className="flex items-center">
+          Add Craft Item
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -55,9 +56,9 @@ import {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-        My Art&Craft List
-        </a>
+        <NavLink to={"/myArtAndCraft"} className="flex items-center">
+          My Art&Craft List
+        </NavLink>
       </Typography>
     </ul>
   );
@@ -66,30 +67,30 @@ import {
     <div className=" mt-1">
       <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
-          >
+          <NavLink to={"/"} className="mr-4 cursor-pointer py-1.5 font-medium">
             Craft Spectrum
-          </Typography>
+          </NavLink>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1">
-              <Button
-                variant="text"
-                size="sm"
-                className="hidden lg:inline-block"
-              >
-                <span>Log In</span>
-              </Button>
-              <Button
-                variant="gradient"
-                size="sm"
-                className="hidden lg:inline-block"
-              >
-                <span>Sign in</span>
-              </Button>
+              <Link to={"/login"}>
+                <Button
+                  variant="text"
+                  size="sm"
+                  className="hidden lg:inline-block"
+                >
+                  <span>Log In</span>
+                </Button>
+              </Link>
+              <Link to={"/register"}>
+                <Button
+                  variant="gradient"
+                  size="sm"
+                  className="hidden lg:inline-block"
+                >
+                  <span>Register</span>
+                </Button>
+              </Link>
             </div>
             <IconButton
               variant="text"
