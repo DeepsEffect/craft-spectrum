@@ -8,9 +8,11 @@ import {
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 function Register() {
-  const { registerUser } = useContext(AuthContext);
+  const { registerUser, signInWithGoogle } = useContext(AuthContext);
   //handle register
   const handleRegisterUser = (e) => {
     e.preventDefault();
@@ -20,6 +22,17 @@ function Register() {
     const password = form.password.value;
     console.log(name, email, password);
     registerUser(email, password)
+      .then((userCredential) => {
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  //handle google sign in
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
       .then((userCredential) => {
         console.log(userCredential.user);
       })
@@ -101,6 +114,15 @@ function Register() {
           }
           containerProps={{ className: "-ml-2.5" }}
         />
+        {/* sign up with google and github */}
+        <Typography className="flex gap-4 justify-center">
+          <Button onClick={handleSignInWithGoogle} className="cursor-pointer">
+            <FaGoogle className="text-2xl" />
+          </Button>
+          <Button>
+            <FaGithub className="text-2xl" />
+          </Button>
+        </Typography>
         <Button type="submit" className="mt-6" fullWidth>
           Register
         </Button>

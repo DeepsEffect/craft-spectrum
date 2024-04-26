@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { createContext, useState } from "react";
 import { auth } from "../firebase/firebase.init";
+import { GoogleAuthProvider } from "firebase/auth";
 
 //create context
 export const AuthContext = createContext(null);
@@ -15,9 +16,15 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  //sign in with google
+  const googleProvider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
 
   //passing the data as object
-  const authInfo = { user, loading, registerUser };
+  const authInfo = { user, loading, registerUser, signInWithGoogle };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
