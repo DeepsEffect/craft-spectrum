@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
   Typography,
@@ -7,9 +7,11 @@ import {
   Collapse,
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 function Nav() {
   const [openNav, setOpenNav] = React.useState(false);
+  const { user } = useContext(AuthContext);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -73,24 +75,30 @@ function Nav() {
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1">
-              <Link to={"/login"}>
-                <Button
-                  variant="text"
-                  size="sm"
-                  className="hidden lg:inline-block"
-                >
-                  <span>Log In</span>
-                </Button>
-              </Link>
-              <Link to={"/register"}>
-                <Button
-                  variant="gradient"
-                  size="sm"
-                  className="hidden lg:inline-block"
-                >
-                  <span>Register</span>
-                </Button>
-              </Link>
+              {user ? (
+                <span>{user.email}</span>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <Button
+                      variant="text"
+                      size="sm"
+                      className="hidden lg:inline-block"
+                    >
+                      <span>Log In</span>
+                    </Button>
+                  </Link>
+                  <Link to="/register">
+                    <Button
+                      variant="gradient"
+                      size="sm"
+                      className="hidden lg:inline-block"
+                    >
+                      <span>Register</span>
+                    </Button>
+                  </Link>
+                </>
+              )}
             </div>
             <IconButton
               variant="text"
@@ -137,14 +145,14 @@ function Nav() {
             <div className="w-full">
               <Link to={"/login"}>
                 <Button fullWidth variant="text" size="sm" className="">
-                  <span>Log In</span>
+                  <span>Login</span>
                 </Button>
               </Link>
             </div>
             <div className="w-full">
               <Link to={"/register"}>
                 <Button fullWidth variant="gradient" size="sm" className="">
-                  <span>Sign in</span>
+                  <span>Register</span>
                 </Button>
               </Link>
             </div>
