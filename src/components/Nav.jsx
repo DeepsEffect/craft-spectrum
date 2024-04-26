@@ -36,7 +36,7 @@ function Nav() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/allArt&Craft"} className="flex items-center">
+        <NavLink to={"/allArtAndCraft"} className="flex items-center">
           All Art & craft
         </NavLink>
       </Typography>
@@ -46,7 +46,7 @@ function Nav() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to={"/addCartItem"} className="flex items-center">
+        <NavLink to={"/addCraftItem"} className="flex items-center">
           Add Craft Item
         </NavLink>
       </Typography>
