@@ -12,7 +12,8 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
 function Register() {
-  const { registerUser, signInWithGoogle } = useContext(AuthContext);
+  const { registerUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   //handle register
   const handleRegisterUser = (e) => {
     e.preventDefault();
@@ -33,6 +34,17 @@ function Register() {
   //handle google sign in
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
+      .then((userCredential) => {
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  //handle github sign inb
+  const handleSignInWithGitHub = () => {
+    signInWithGithub()
       .then((userCredential) => {
         console.log(userCredential.user);
       })
@@ -119,7 +131,7 @@ function Register() {
           <Button onClick={handleSignInWithGoogle} className="cursor-pointer">
             <FaGoogle className="text-2xl" />
           </Button>
-          <Button>
+          <Button onClick={handleSignInWithGitHub}>
             <FaGithub className="text-2xl" />
           </Button>
         </Typography>
