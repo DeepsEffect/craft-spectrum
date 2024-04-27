@@ -1,7 +1,9 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const AddCraftItem = () => {
-  
+  const { user } = useContext(AuthContext);
   //handle add craft
   const handleAddCraft = (e) => {
     e.preventDefault();
@@ -31,6 +33,21 @@ const AddCraftItem = () => {
       username,
     };
     console.log(craftItem);
+    //sending data to the server
+    fetch("http://localhost:5000/crafts", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(craftItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          console.log("data successfully posted to the Database");
+        }
+      });
   };
 
   return (
@@ -172,6 +189,7 @@ const AddCraftItem = () => {
               <Input
                 size="lg"
                 name="username"
+                defaultValue={user.displayName}
                 placeholder="Enter Your Username"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
@@ -185,6 +203,7 @@ const AddCraftItem = () => {
               User Email
             </Typography>
             <Input
+              defaultValue={user.email}
               size="lg"
               name="email"
               placeholder="user@gmail.com"
