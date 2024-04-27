@@ -285,22 +285,32 @@ function Nav() {
         </div>
         <Collapse open={openNav}>
           {navList}
-          <div className="flex items-center gap-x-1">
-            <div className="w-full">
-              <Link to={"/login"}>
-                <Button fullWidth variant="text" size="sm" className="">
-                  <span>Login</span>
-                </Button>
-              </Link>
-            </div>
-            <div className="w-full">
-              <Link to={"/register"}>
-                <Button fullWidth variant="gradient" size="sm" className="">
-                  <span>Register</span>
-                </Button>
-              </Link>
-            </div>
-          </div>
+          {user ? (
+            <>
+              <Button onClick={handleSignOut} className="w-full">
+                Logout
+              </Button>
+            </>
+          ) : (
+            <>
+              <div className="flex items-center gap-x-1">
+                <div className="w-full">
+                  <Link to={"/login"}>
+                    <Button fullWidth variant="text" size="sm" className="">
+                      <span>Login</span>
+                    </Button>
+                  </Link>
+                </div>
+                <div className="w-full">
+                  <Link to={"/register"}>
+                    <Button fullWidth variant="gradient" size="sm" className="">
+                      <span>Register</span>
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
         </Collapse>
       </Navbar>
     </div>
