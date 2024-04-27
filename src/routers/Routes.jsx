@@ -8,6 +8,7 @@ import MyArtAndCraft from "../pages/MyArtAndCraft";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import ViewDetails from "../pages/ViewDetails";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
         path: "/allArtAndCraft",
         element: <AllArtAndCraft></AllArtAndCraft>,
         loader: () => fetch("http://localhost:5000/crafts"),
+      },
+      {
+        path: '/viewDetails/:id',
+        element: <ViewDetails></ViewDetails>
       },
       {
         path: "/addCraftItem",
