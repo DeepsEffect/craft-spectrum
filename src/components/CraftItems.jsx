@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-
 import { Button } from "@material-tailwind/react";
-import { CraftCardHome } from "./CraftCardHome";
 import { Link } from "react-router-dom";
+import { CraftCards } from "./CraftCards";
 
 const CraftItems = ({ crafts }) => {
   return (
@@ -20,7 +19,7 @@ const CraftItems = ({ crafts }) => {
       {/* cards section */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-10 lg:px-40 ">
         {crafts.map((craft) => (
-          <CraftCardHome craft={craft} key={craft._id}></CraftCardHome>
+          <CraftCards crafts={craft} key={craft._id}></CraftCards>
         ))}
       </section>
       <Link to={'/allArtAndCraft'}>
