@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../pages/ViewDetails";
+import UpdateCraft from "../pages/UpdateCraft";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,11 @@ export const router = createBrowserRouter([
             <MyArtAndCraft></MyArtAndCraft>
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/updateCraft/:id',
+        element: <UpdateCraft></UpdateCraft>,
+        // loader: () => fetch('')
       },
       {
         path: "/login",
