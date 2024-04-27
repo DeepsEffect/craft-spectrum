@@ -3,10 +3,10 @@ import Banner from "../components/Banner";
 import CraftItems from "../components/CraftItems";
 
 const Home = () => {
-  const crafts = useLoaderData()
+  const crafts = useLoaderData();
 
   return (
-    <div >
+    <div>
       <Banner></Banner>
       <CraftItems crafts={crafts}></CraftItems>
     </div>
