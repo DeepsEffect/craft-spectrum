@@ -7,8 +7,8 @@ const CraftItems = ({ crafts }) => {
   return (
     <div className="text-black">
       {/* header section */}
-      <section className="text-center max-w-md mx-auto mt-10">
-        <h2 className="text-2xl">Discover Our Handcrafted Treasures</h2>
+      <section className="text-center max-w-lg mx-auto mt-10">
+        <h2 className="text-2xl font-semibold lg:text-3xl">Discover Our Handcrafted Treasures</h2>
         <p>
           Explore our curated collection of artisanal craft items, meticulously
           crafted to inspire and delight. From charming trinkets to stunning

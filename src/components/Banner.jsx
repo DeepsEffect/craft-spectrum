@@ -2,7 +2,7 @@ import { Carousel, Typography } from "@material-tailwind/react";
 
 export default function Banner() {
   return (
-    <Carousel className="" autoplay={true} autoplayDelay={4000} loop={true}>
+    <Carousel autoplay={true} autoplayDelay={4000} loop={true}>
       {/* slider 1 */}
       <div className="relative">
         <img
@@ -15,7 +15,7 @@ export default function Banner() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              className="mb-4 text-2xl font-frank md:text-4xl lg:text-5xl"
             >
               Explore the Palette of Creativity
             </Typography>
@@ -44,7 +44,7 @@ export default function Banner() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              className="mb-4 text-3xl font-frank md:text-4xl lg:text-5xl"
             >
               Handmade Creations for Every Passion
             </Typography>
@@ -55,7 +55,7 @@ export default function Banner() {
             >
               Immerse yourself in a world of handmade wonders. Discover unique
               creations crafted with passion and precision by artisans from
-              around the globe. Whether you're a seasoned crafter or just
+              around the globe. Whether you&apos;re a seasoned crafter or just
               starting your journey, find the perfect project to bring your
               vision to life.
             </Typography>
@@ -74,7 +74,7 @@ export default function Banner() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              className="mb-4 font-frank text-3xl md:text-4xl lg:text-5xl"
             >
               Your Gateway to Artistic Exploration
             </Typography>

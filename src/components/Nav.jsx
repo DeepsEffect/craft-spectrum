@@ -87,7 +87,10 @@ function Nav() {
     <div className="overflow-hidden sticky top-0 z-10 ">
       <Navbar className="h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 ">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <NavLink to={"/"} className="mr-4 cursor-pointer py-1.5 font-medium">
+          <NavLink
+            to={"/"}
+            className="mr-4 cursor-pointer text-xl lg:text-2xl py-1.5 font-bold"
+          >
             Craft Spectrum
           </NavLink>
           <div className="flex items-center gap-4">

@@ -31,7 +31,10 @@ export function CraftCards({ crafts, email }) {
       </CardHeader>
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
+          <Typography
+            color="blue-gray"
+            className="font-medium text-2xl font-frank"
+          >
             {item_name}
           </Typography>
           <Typography color="blue-gray" className="font-medium">

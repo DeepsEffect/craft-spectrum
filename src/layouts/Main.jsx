@@ -4,9 +4,9 @@ import { Footer } from "../components/Footer";
 
 const Main = () => {
   return (
-    <div>
+    <div className="font-frank">
       <Nav></Nav>
-      <div className="min-h-[calc(100vh-114px)]">
+      <div className="min-h-[calc(100vh-114px)] ">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
