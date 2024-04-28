@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../pages/ViewDetails";
 import UpdateCraft from "../pages/UpdateCraft";
+import Error from "../components/Error";
 
 export const router = createBrowserRouter([
   {
@@ -63,5 +64,9 @@ export const router = createBrowserRouter([
         element: <Register></Register>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);
