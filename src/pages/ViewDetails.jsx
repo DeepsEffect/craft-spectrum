@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, ScrollRestoration, useLoaderData } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -8,10 +8,8 @@ import {
 } from "@material-tailwind/react";
 
 const ViewDetails = () => {
-  const { id } = useParams();
   const craft = useLoaderData();
   const {
-    _id,
     image,
     item_name,
     subcategory_name,
@@ -22,24 +20,24 @@ const ViewDetails = () => {
     processing_time,
     stock_status,
     email,
-    username,
   } = craft;
   console.log(image);
   console.log(craft);
 
   return (
     <div>
-      <h3 className="text-center">view details of {id}</h3>
-      <Card className="w-full group max-w-5xl border border-green-500 flex-row mx-auto mt-6">
+      <ScrollRestoration></ScrollRestoration>
+      <h3 className="text-center text-4xl">Detailed View Of {item_name}</h3>
+      <Card className="w-full px-10 group max-w-5xl border border-blue-gray-600 flex-row items-center mx-auto mt-6">
         <CardHeader
           shadow={false}
           floated={false}
-          className="m-0 w-2/5 shrink-0 rounded-r-none "
+          className="m-0 w-3/4 shrink-0 "
         >
           <img
             src={image}
             alt="card-image"
-            className="w-full object-cover transition ease-in-out group-hover:scale-105"
+            className="w-full h-[500px] object-cover transition ease-in-out group-hover:scale-105"
           />
         </CardHeader>
         <CardBody>
@@ -49,12 +47,30 @@ const ViewDetails = () => {
           <Typography variant="h4" color="blue-gray" className="mb-2">
             {item_name}
           </Typography>
-          <Typography color="gray" className="mb-8 font-normal">
-            {short_description}
+          <Typography color="gray" className="mb-8 font-base">
+            Description: {short_description}
           </Typography>
-          <a href="#" className="inline-block">
+          <Typography color="gray" className="mb-4 font-medium">
+            Price: {price}
+          </Typography>
+          <Typography color="gray" className="mb-4 font-medium">
+            Rating: {rating}
+          </Typography>
+          <Typography color="gray" className="mb-4 font-medium">
+            Customization: {customization}
+          </Typography>
+          <Typography color="gray" className="mb-4 font-medium">
+            Processing Time: {processing_time}
+          </Typography>
+          <Typography color="gray" className="mb-4 font-medium">
+            Stock Status: {stock_status}
+          </Typography>
+          <Typography color="gray" className="mb-4 font-medium">
+            Added By: {email}
+          </Typography>
+          <Link to={"/"} className="inline-block">
             <Button variant="text" className="flex items-center gap-2">
-              Learn More
+              Back To Home
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -70,7 +86,7 @@ const ViewDetails = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </CardBody>
       </Card>
     </div>
