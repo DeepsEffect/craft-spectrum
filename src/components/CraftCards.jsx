@@ -26,12 +26,12 @@ export function CraftCards({ crafts }) {
   } = crafts;
 
   return (
-    <Card className="w-full">
+    <Card className="w-full group">
       <CardHeader shadow={false} floated={false} className="h-96">
         <img
           src={image}
           alt="card-image"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover transition ease-in-out overflow-hidden group-hover:scale-105"
         />
       </CardHeader>
       <CardBody>

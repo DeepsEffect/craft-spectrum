@@ -187,6 +187,7 @@ const AddCraftItem = () => {
                 User Name
               </Typography>
               <Input
+                readOnly
                 size="lg"
                 name="username"
                 defaultValue={user.displayName}
@@ -203,6 +204,7 @@ const AddCraftItem = () => {
               User Email
             </Typography>
             <Input
+              readOnly
               defaultValue={user.email}
               size="lg"
               name="email"

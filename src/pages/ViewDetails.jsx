@@ -30,16 +30,16 @@ const ViewDetails = () => {
   return (
     <div>
       <h3 className="text-center">view details of {id}</h3>
-      <Card className="w-full max-w-5xl border border-green-500 flex-row mx-auto mt-6">
+      <Card className="w-full group max-w-5xl border border-green-500 flex-row mx-auto mt-6">
         <CardHeader
           shadow={false}
           floated={false}
-          className="m-0 w-2/5 shrink-0 rounded-r-none"
+          className="m-0 w-2/5 shrink-0 rounded-r-none "
         >
           <img
             src={image}
             alt="card-image"
-            className="w-full object-cover"
+            className="w-full object-cover transition ease-in-out group-hover:scale-105"
           />
         </CardHeader>
         <CardBody>
