@@ -6,16 +6,18 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+import toast from "react-hot-toast";
 
 function Register() {
   const { registerUser, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
+  const navigate = useNavigate();
 
   //handle register
   const handleRegisterUser = (e) => {
@@ -26,16 +28,44 @@ function Register() {
     const photo = form.photo.value;
     const password = form.password.value;
     // console.log(name, email, password);
+
+    // password validation
+    if (password.length < 6) {
+      toast.error("Password must be more than 6 characters");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter.");
+      return;
+    }
+
     registerUser(email, password)
       .then((userCredential) => {
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: photo,
-        });
-        console.log(userCredential.user);
+        })
+          .then(() => {
+            console.log(userCredential.user);
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
+            toast.success(
+              `"${userCredential.user.displayName}" Registered Successfully`
+            );
+            navigate("/");
+          })
+          .catch((error) => {
+            console.error("Error updating profile:", error.firebase);
+          });
       })
       .catch((error) => {
         console.error(error);
+        toast.error(error.code.slice(5));
       });
   };
 
@@ -44,9 +74,12 @@ function Register() {
     signInWithGoogle()
       .then((userCredential) => {
         console.log(userCredential.user);
+        toast.success("Successfully Signed In with Google");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
+        toast.error(error.code);
       });
   };
 
@@ -55,9 +88,12 @@ function Register() {
     signInWithGithub()
       .then((userCredential) => {
         console.log(userCredential.user);
+        toast.success("Successfully Signed In with Github");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
+        toast.error(error.code);
       });
   };
 
@@ -83,6 +119,7 @@ function Register() {
           </Typography>
           <Input
             size="lg"
+            required
             name="name"
             placeholder="name@mail.com"
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -94,6 +131,7 @@ function Register() {
             Your Email
           </Typography>
           <Input
+            required
             size="lg"
             name="email"
             placeholder="name@mail.com"
@@ -118,6 +156,7 @@ function Register() {
             Password
           </Typography>
           <Input
+            required
             name="password"
             type="password"
             size="lg"
