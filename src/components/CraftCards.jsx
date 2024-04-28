@@ -9,20 +9,15 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-export function CraftCards({ crafts }) {
+export function CraftCards({ crafts, email }) {
   const {
     _id,
     image,
     item_name,
-    subcategory_name,
     short_description,
     price,
     rating,
-    customization,
-    processing_time,
     stock_status,
-    email,
-    username,
   } = crafts;
 
   return (
@@ -55,8 +50,24 @@ export function CraftCards({ crafts }) {
           color="gray"
           className="font-normal opacity-75"
         >
+          Ratings: {rating}
+        </Typography>
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal opacity-75"
+        >
           {stock_status}
         </Typography>
+        {email && (
+          <Typography
+            variant="small"
+            color="gray"
+            className="font-normal opacity-75"
+          >
+            added by: {email}
+          </Typography>
+        )}
       </CardBody>
       <CardFooter className="pt-0">
         <Link to={`/viewDetails/${_id}`}>

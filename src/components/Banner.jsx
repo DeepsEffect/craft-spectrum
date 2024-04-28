@@ -2,7 +2,7 @@ import { Carousel, Typography } from "@material-tailwind/react";
 
 export default function Banner() {
   return (
-    <Carousel className="" autoplay={false} autoplayDelay={4000} loop={true}>
+    <Carousel className="" autoplay={true} autoplayDelay={4000} loop={true}>
       {/* slider 1 */}
       <div className="relative">
         <img
@@ -17,17 +17,17 @@ export default function Banner() {
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              The Beauty of Nature
+              Explore the Palette of Creativity
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80"
             >
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Step into the diverse world of Craft Spectrum, where creativity
+              knows no bounds. Discover a spectrum of art and craft
+              subcategories, from traditional to contemporary, and unleash your
+              imagination like never before.
             </Typography>
           </div>
         </div>
@@ -46,17 +46,18 @@ export default function Banner() {
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              The Beauty of Nature
+              Handmade Creations for Every Passion
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80"
             >
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Immerse yourself in a world of handmade wonders. Discover unique
+              creations crafted with passion and precision by artisans from
+              around the globe. Whether you're a seasoned crafter or just
+              starting your journey, find the perfect project to bring your
+              vision to life.
             </Typography>
           </div>
         </div>
@@ -64,7 +65,7 @@ export default function Banner() {
       {/* slider 3 */}
       <div className="relative">
         <img
-          src="https://images.unsplash.com/photo-1581872553286-2746c6a8b295?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1605700311233-cbef0730016a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="image 1"
           className="h-[400px] lg:h-[800px] w-full object-cover"
         />
@@ -75,17 +76,17 @@ export default function Banner() {
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              The Beauty of Nature
+              Your Gateway to Artistic Exploration
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80"
             >
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
+              Craft Spectrum invites you to embark on an immersive journey of
+              artistic exploration. Delve into an array of art and craft
+              subcategories, curated to ignite your creativity and inspire your
+              next masterpiece.
             </Typography>
           </div>
         </div>
