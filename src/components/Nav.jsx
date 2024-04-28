@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "./Nav.css";
 import {
   Navbar,
   Typography,
@@ -45,7 +46,7 @@ function Nav() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink href="/" className="flex items-center">
+        <NavLink to={"/"} className="flex items-center">
           Home
         </NavLink>
       </Typography>

@@ -1,0 +1,26 @@
+li a.active {
+  position: relative;
+  font-weight: 600;
+}
+
+li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #6c10bc;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
