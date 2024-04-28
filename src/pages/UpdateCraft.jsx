@@ -41,7 +41,7 @@ const UpdateCraft = () => {
     };
     console.log(updateCraft);
     //sending data to the server
-    fetch(`http://localhost:5000/crafts/${_id}`, {
+    fetch(`https://craft-spectrum-server.vercel.app/crafts/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

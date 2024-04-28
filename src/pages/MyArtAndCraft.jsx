@@ -9,7 +9,7 @@ const MyArtAndCraft = () => {
   const [crafts, setCrafts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myCrafts/${user.email}`)
+    fetch(`https://craft-spectrum-server.vercel.app/myCrafts/${user.email}`)
       .then((res) => res.json())
       .then((data) => setCrafts(data));
   }, [user.email]);

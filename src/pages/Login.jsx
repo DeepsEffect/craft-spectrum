@@ -9,7 +9,12 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  ScrollRestoration,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -67,6 +72,7 @@ function Login() {
 
   return (
     <Card className=" w-full lg:w-96 border-2 mx-auto mt-12 lg:mt-20">
+      <ScrollRestoration></ScrollRestoration>
       <form onSubmit={handleLoginUser}>
         <CardHeader
           variant="gradient"
