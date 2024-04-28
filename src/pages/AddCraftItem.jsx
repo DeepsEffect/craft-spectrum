@@ -1,9 +1,13 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AddCraftItem = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
   //handle add craft
   const handleAddCraft = (e) => {
     e.preventDefault();
@@ -45,7 +49,9 @@ const AddCraftItem = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          console.log("data successfully posted to the Database");
+          // console.log("data successfully posted to the Database");
+          toast.success("Craft Item Added");
+          navigate(location?.state ? location.state : "/myArtAndCraft");
         }
       });
   };
