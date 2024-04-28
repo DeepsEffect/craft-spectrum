@@ -8,7 +8,7 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 
 const AddCraftItem = () => {
   const { user } = useContext(AuthContext);
@@ -66,21 +66,22 @@ const AddCraftItem = () => {
 
   return (
     <div className="mx-auto">
+      <ScrollRestoration></ScrollRestoration>
       <Card
         color="transparent"
         shadow={false}
-        className="flex items-center mt-4 lg:mt-8"
+        className="flex items-center mt-4 lg:mt-8 justify-center "
       >
         <Typography variant="h4" color="blue-gray">
           Add Craft
         </Typography>
         <Typography color="gray" className="mt-1 font-normal">
-          Fill the form to add a craft to your website
+          Please fill the form to add a craft
         </Typography>
         {/* form section */}
         <form
           onSubmit={handleAddCraft}
-          className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+          className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 "
         >
           <div className="mb-1 flex-row lg:flex justify-center items-center gap-6 ">
             {/* section left */}
@@ -88,28 +89,18 @@ const AddCraftItem = () => {
               {/* image input */}
 
               <Input
-                variant="standard"
+                variant="outlined"
                 name="image"
                 label="Image Url"
                 placeholder="Image Url"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: "before:content-none after:content-none",
-                }}
               />
 
               {/* item name */}
-
               <Input
-                size="lg"
                 name="item_name"
                 label="Item Name"
-                variant="standard"
+                variant="outlined"
                 placeholder="Item name"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: "before:content-none after:content-none",
-                }}
               />
 
               {/* subcategory name */}
@@ -131,33 +122,24 @@ const AddCraftItem = () => {
 
               <Textarea
                 size="lg"
-                variant="standard"
+                variant="outlined"
                 label="Short Description"
                 name="short_description"
                 placeholder="Short Description"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: "before:content-none after:content-none",
-                }}
               />
 
               {/* price */}
               <Input
-                size="lg"
-                variant="standard"
+                variant="outlined"
                 label="Price"
-                // defaultValue={"$"}
+                type="number"
                 name="price"
                 placeholder="Price"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: "before:content-none after:content-none",
-                }}
               />
             </section>
 
             {/* section right */}
-            <section className="mb-1 flex flex-col gap-6">
+            <section className="mb-1 mt-6 flex flex-col gap-6">
               <select
                 name="rating"
                 className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -182,15 +164,9 @@ const AddCraftItem = () => {
 
               {/* processing time */}
               <Input
-                size="lg"
-                variant="standard"
+                variant="outlined"
                 label="Processing Time"
                 name="processing_time"
-                placeholder="Processing Time"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: "before:content-none after:content-none",
-                }}
               />
 
               {/* stock status */}
@@ -206,35 +182,25 @@ const AddCraftItem = () => {
               {/* username */}
               <Input
                 readOnly
-                variant="standard"
+                variant="outlined"
                 label="User Name"
-                size="lg"
                 name="username"
                 defaultValue={user.displayName}
-                placeholder="Enter Your Username"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: "before:content-none after:content-none",
-                }}
+                placeholder="Username"
               />
+              <div className=" mb-1 flex flex-col gap-6 mt-4">
+                <Input
+                  readOnly
+                  variant="outlined"
+                  label="User Email"
+                  defaultValue={user.email}
+                  name="email"
+                  placeholder="user@gmail.com"
+                />
+              </div>
             </section>
           </div>
 
-          <div className=" mb-1 flex flex-col gap-6 mt-4">
-            <Input
-              readOnly
-              variant="standard"
-              label="User Email"
-              defaultValue={user.email}
-              size="lg"
-              name="email"
-              placeholder="user@gmail.com"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-              labelProps={{
-                className: "before:content-none after:content-none",
-              }}
-            />
-          </div>
           <Button type="submit" className="mt-6" fullWidth>
             Add Craft Item
           </Button>
