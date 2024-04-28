@@ -30,7 +30,7 @@ const ViewDetails = () => {
   return (
     <div>
       <h3 className="text-center">view details of {id}</h3>
-      <Card className="w-full px-10 flex-row mx-auto mt-6">
+      <Card className="w-full max-w-5xl border border-green-500 flex-row mx-auto mt-6">
         <CardHeader
           shadow={false}
           floated={false}
@@ -39,7 +39,7 @@ const ViewDetails = () => {
           <img
             src={image}
             alt="card-image"
-            className="h-full w-full object-cover"
+            className="w-full object-cover"
           />
         </CardHeader>
         <CardBody>

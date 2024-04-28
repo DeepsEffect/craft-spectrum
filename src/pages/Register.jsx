@@ -83,7 +83,7 @@ function Register() {
       });
   };
 
-  //handle github sign inb
+  //handle github sign in
   const handleSignInWithGitHub = () => {
     signInWithGithub()
       .then((userCredential) => {
