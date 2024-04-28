@@ -76,7 +76,7 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
             {item_name}
           </Typography>
           <Typography color="blue-gray" className="font-medium">
-            {price}
+            ${price}
           </Typography>
         </div>
         <Typography

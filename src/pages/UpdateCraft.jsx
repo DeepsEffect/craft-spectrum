@@ -4,6 +4,7 @@ import {
   Button,
   Typography,
   Spinner,
+  Textarea,
 } from "@material-tailwind/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -87,7 +88,7 @@ const UpdateCraft = () => {
           Update Craft
         </Typography>
         <Typography color="gray" className="mt-1 font-normal">
-          Fill the form to add a craft to your website
+          Please edit the form to update
         </Typography>
         {/* form section */}
         {loading ? (
@@ -97,133 +98,115 @@ const UpdateCraft = () => {
         ) : (
           <form
             onSubmit={handleUpdateCraft}
-            className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+            className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 "
           >
-            <div className="mb-1 flex-row lg:flex justify-center items-center gap-6">
+            <div className="mb-1 flex-row lg:flex justify-center items-center gap-6 ">
               {/* section left */}
               <section className="mb-1 flex flex-col gap-6">
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Craft image (url)
-                </Typography>
+                {/* image input */}
                 <Input
                   defaultValue={image}
-                  size="lg"
+                  variant="outlined"
                   name="image"
-                  placeholder="https://image.com"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
+                  label="Image Url"
+                  placeholder="Image Url"
                 />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Item Name
-                </Typography>
+
+                {/* item name */}
                 <Input
                   defaultValue={item_name}
-                  size="lg"
                   name="item_name"
-                  placeholder="item name"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
+                  label="Item Name"
+                  variant="outlined"
+                  placeholder="Item name"
                 />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Subcategory Name
-                </Typography>
-                <Input
+
+                {/* subcategory name */}
+                <select
                   defaultValue={subcategory_name}
-                  size="lg"
                   name="subcategory_name"
-                  placeholder="Subcategory Name"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
-                />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Short Description
-                </Typography>
-                <Input
+                  className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                >
+                  <option value="">Select Subcategory</option>
+                  <option value="Card Making">Card Making</option>
+                  <option value="Scrapbooking">Scrapbooking</option>
+                  <option value="Paper Quilling & origami">
+                    Paper Quilling & origami
+                  </option>
+                  <option value="Glass Dying & Staining">Lampworking</option>
+                  <option value="Glass Dying & Staining">
+                    Glass Dying & Staining
+                  </option>
+                </select>
+
+                <Textarea
                   defaultValue={short_description}
                   size="lg"
+                  variant="outlined"
+                  label="Short Description"
                   name="short_description"
-                  placeholder="enter short description"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
-                />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  price
-                </Typography>
-                <Input
-                  size="lg"
-                  defaultValue={price}
-                  name="price"
-                  placeholder="Enter Your Price"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
+                  placeholder="Short Description"
                 />
               </section>
+
               {/* section right */}
-              <section className="mb-1 flex flex-col gap-6">
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Rating
-                </Typography>
+              <section className="mb-1 mt-6 flex flex-col gap-6">
+                {/* price */}
                 <Input
+                  defaultValue={price}
+                  variant="outlined"
+                  label="Price"
+                  type="number"
+                  name="price"
+                  placeholder="Price"
+                />
+
+                {/* rating */}
+                <select
                   defaultValue={rating}
-                  size="lg"
                   name="rating"
-                  placeholder="give your rating"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
-                />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Customization
-                </Typography>
-                <Input
+                  className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                >
+                  <option value="">Select Rating</option>
+                  <option value="1">1 Star</option>
+                  <option value="2">2 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="5">5 Stars</option>
+                </select>
+
+                {/* customization */}
+                <select
                   defaultValue={customization}
-                  size="lg"
                   name="customization"
-                  placeholder="is customizable - yes, no"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
-                />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Processing Time
-                </Typography>
+                  className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                >
+                  <option value="">Select Customization</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                {/* processing time */}
                 <Input
                   defaultValue={processing_time}
-                  size="lg"
+                  variant="outlined"
+                  label="Processing Time"
                   name="processing_time"
-                  placeholder="how much processing time?"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
                 />
-                <Typography variant="h6" color="blue-gray" className="-mb-3">
-                  Stock Status
-                </Typography>
-                <Input
+
+                {/* stock status */}
+                <select
                   defaultValue={stock_status}
-                  size="lg"
                   name="stock_status"
-                  placeholder="In stock or Made to Order?"
-                  className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                  labelProps={{
-                    className: "before:content-none after:content-none",
-                  }}
-                />
+                  className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                >
+                  <option value="">Select Stock Status</option>
+                  <option value="In Stock">In Stock</option>
+                  <option value="Made To Order">Made to Order</option>
+                </select>
               </section>
             </div>
+
             <Button type="submit" className="mt-6" fullWidth>
               Update Craft Item
             </Button>

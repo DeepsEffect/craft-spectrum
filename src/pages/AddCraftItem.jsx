@@ -8,12 +8,10 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
-import { ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
+import { ScrollRestoration } from "react-router-dom";
 
 const AddCraftItem = () => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   //handle add craft
   const handleAddCraft = (e) => {
@@ -59,7 +57,6 @@ const AddCraftItem = () => {
         if (data.insertedId) {
           // console.log("data successfully posted to the Database");
           toast.success("Craft Item Added");
-          navigate(location?.state ? location.state : "/myArtAndCraft");
         }
       });
   };
@@ -87,7 +84,6 @@ const AddCraftItem = () => {
             {/* section left */}
             <section className="mb-1 flex flex-col gap-6">
               {/* image input */}
-
               <Input
                 variant="outlined"
                 name="image"
