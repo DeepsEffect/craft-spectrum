@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="lg:-mt-[82px]">
+      <div className="lg:-mt-[78px]">
         <Banner></Banner>
       </div>
       <CraftItems crafts={crafts}></CraftItems>

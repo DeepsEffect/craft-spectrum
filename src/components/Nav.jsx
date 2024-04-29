@@ -90,7 +90,7 @@ function Nav() {
             to={"/"}
             className="mr-4 cursor-pointer text-text text-xl lg:text-2xl py-1.5 font-bold"
           >
-            Craft Spectrum
+            Craft <span className="text-primary">Spectrum</span>
           </NavLink>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
@@ -226,18 +226,16 @@ function Nav() {
                     <>
                       <Link to="/login">
                         <Button
-                          variant="text"
                           size="sm"
-                          className="hidden lg:inline-block"
+                          className="hidden lg:inline-block bg-primary dark:bg-primary dark:text-text"
                         >
                           <span>Log In</span>
                         </Button>
                       </Link>
                       <Link to="/register">
                         <Button
-                          variant="gradient"
                           size="sm"
-                          className="hidden lg:inline-block"
+                          className="hidden lg:inline-block bg-accent dark:bg-accent dark:text-text"
                         >
                           <span>Register</span>
                         </Button>

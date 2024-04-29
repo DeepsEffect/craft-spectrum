@@ -40,7 +40,7 @@ const CraftItems = ({ crafts }) => {
         </Fade>
       </section>
       {/* cards section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-10 lg:px-40 ">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-10 lg:px-44 ">
         {crafts.map((craft) => (
           <CraftCards crafts={craft} key={craft._id}></CraftCards>
         ))}
