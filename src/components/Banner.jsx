@@ -59,7 +59,6 @@ export default function Banner() {
               className="mb-12 opacity-80 text-md lg:text-xl"
             >
               <Fade direction="up" duration={2000}>
-                {" "}
                 Immerse yourself in a world of handmade wonders. Discover unique
                 creations crafted with passion and precision by artisans from
                 around the globe. Whether you&apos;re a seasoned crafter or just
