@@ -40,46 +40,26 @@ function Nav() {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
+      <li className="p-1 text-black font-normal">
         <NavLink to={"/"} className="flex items-center">
           Home
         </NavLink>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
+      </li>
+      <li className="p-1 text-black font-normal">
         <NavLink to={"/allArtAndCraft"} className="flex items-center">
           All Art & craft
         </NavLink>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
+      </li>
+      <li className="p-1 text-black font-normal">
         <NavLink to={"/addCraftItem"} className="flex items-center">
           Add Craft Item
         </NavLink>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
+      </li>
+      <li className="p-1 text-black font-normal">
         <NavLink to={"/myArtAndCraft"} className="flex items-center">
           My Art&Craft List
         </NavLink>
-      </Typography>
+      </li>
     </ul>
   );
 

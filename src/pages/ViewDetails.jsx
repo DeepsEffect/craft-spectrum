@@ -27,7 +27,9 @@ const ViewDetails = () => {
   return (
     <div>
       <ScrollRestoration></ScrollRestoration>
-      <h3 className="text-center text-4xl">Detailed View Of {item_name}</h3>
+      <h3 className="text-center text-4xl font-medium">
+        Detailed View Of {item_name}
+      </h3>
       <Card className="w-full px-10 group max-w-5xl border border-blue-gray-600 flex-row items-center mx-auto mt-6">
         <CardHeader
           shadow={false}

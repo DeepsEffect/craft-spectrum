@@ -22,9 +22,9 @@ export function Footer() {
     <footer className="relative w-full">
       <div className="mx-auto w-full px-8 mt-12 lg:mt-40">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <Typography variant="h5" className="mb-6">
+          <h2 className="mb-6 text-2xl font-semibold">
             Craft Spectrum
-          </Typography>
+          </h2>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>

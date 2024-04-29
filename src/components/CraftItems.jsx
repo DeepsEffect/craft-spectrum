@@ -12,21 +12,23 @@ const CraftItems = ({ crafts }) => {
       <section className="text-center max-w-xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold lg:text-3xl">
           Discover Our Handmade{" "}
-          <Typewriter
-            words={[
-              "Card Making",
-              "Scrapbooking",
-              "Paper Quilling & origami",
-              "Glass Painting",
-              "Lampwork",
-              "Glass Dying & staining",
-            ]}
-            cursor
-            loop={6}
-            cursorStyle={"|"}
-            typeSpeed={100}
-            deleteSpeed={30}
-          ></Typewriter>
+          <span className="text-blue-gray-600">
+            <Typewriter
+              words={[
+                "Card Making",
+                "Scrapbooking",
+                "Paper Quilling & origami",
+                "Glass Painting",
+                "Lampwork",
+                "Glass Dying & staining",
+              ]}
+              cursor
+              loop={6}
+              cursorStyle={"|"}
+              typeSpeed={100}
+              deleteSpeed={30}
+            ></Typewriter>
+          </span>
         </h2>
         <Fade duration={2000}>
           <p>
