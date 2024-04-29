@@ -41,11 +41,11 @@ const MyArtAndCraft = () => {
   return (
     <div>
       <ScrollRestoration></ScrollRestoration>
-      <h2 className="text-center text-2xl">My art and craft</h2>
+      <h2 className="text-center text-2xl mt-6 lg:mt-12">My art and craft</h2>
       <div className="flex justify-center mt-6">
         <Menu>
           <MenuHandler>
-            <Button>Customization</Button>
+            <Button className="bg-accent dark:bg-accent">Customization</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem onClick={() => handleCustomizationFilter("all")}>
@@ -65,9 +65,9 @@ const MyArtAndCraft = () => {
           <Spinner size={24} />
         </div>
       ) : (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-20 mt-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 lg:px-44 mt-10">
           {filteredCraft.length === 0 ? (
-            <p className="col-span-3 text-center">No crafts found.</p>
+            <p className="col-span-3 text-center text-text dark:text-text">No crafts found.</p>
           ) : (
             <>
               {" "}
@@ -82,13 +82,13 @@ const MyArtAndCraft = () => {
             </>
           )}
           {crafts.length === 0 && (
-            <p className="col-span-3 text-center">
+            <p className="col-span-3 text-center text-text dark:text-text">
               You haven&apos;t added any items yet.
               <br />
               Click Here to Add
               <br />
               <Link to={"/addCraftItem"}>
-                <Button>Add Item</Button>
+                <Button className="bg-primary dark:bg-primary">Add Item</Button>
               </Link>
             </p>
           )}

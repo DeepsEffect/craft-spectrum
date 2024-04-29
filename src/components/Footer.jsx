@@ -1,4 +1,5 @@
 import { Typography } from "@material-tailwind/react";
+import logo from "/logo.png";
 
 const LINKS = [
   {
@@ -19,17 +20,23 @@ const currentYear = new Date().getFullYear();
 
 export function Footer() {
   return (
-    <footer className="relative w-full">
+    <footer className="relative w-full  mt-10 ">
       <div className="mx-auto w-full px-8 mt-12 lg:mt-40">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <h2 className="mb-6 text-2xl text-text dark:text-text font-semibold">Craft Spectrum</h2>
+          {/* logo */}
+          <section className="flex flex-col gap-2 items-center justify-center w-[200px] ">
+            <img src={logo} alt="" className="w-14" />
+            <h2 className="mb-6 text-2xl text-text dark:text-text font-semibold">
+              Craft Spectrum
+            </h2>
+          </section>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
                 <Typography
                   variant="small"
                   color="blue-gray"
-                  className="mb-3 font-medium opacity-40"
+                  className="mb-3 font-medium opacity-75 text-text dark:text-text"
                 >
                   {title}
                 </Typography>
@@ -49,9 +56,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
-          <Typography
-            className="mb-4 text-center font-normal text-text dark:text-text md:mb-0"
-          >
+          <Typography className="mb-4 text-center font-normal text-text dark:text-text md:mb-0">
             &copy; {currentYear} Craft Spectrum. All Rights Reserved.
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">

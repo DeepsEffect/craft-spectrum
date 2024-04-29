@@ -67,7 +67,10 @@ const ViewDetails = () => {
             Added By: {email}
           </Typography>
           <Link to={"/"} className="inline-block">
-            <Button variant="text" className="flex items-center gap-2">
+            <Button
+              variant="text"
+              className="flex items-center gap-2 text-text dark:text-text"
+            >
               Back To Home
               <svg
                 xmlns="http://www.w3.org/2000/svg"

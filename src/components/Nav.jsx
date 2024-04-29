@@ -17,6 +17,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { RxAvatar } from "react-icons/rx";
 import toast from "react-hot-toast";
+import logo from "/logo.png";
 
 function Nav() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -78,7 +79,7 @@ function Nav() {
         </NavLink>
       </li>
       <li className="p-1 text-text font-normal flex items-center gap-2">
-        <Switch onClick={handleThemeSwitch} />
+        <Switch onClick={handleThemeSwitch} color="purple" />
         dark mode
       </li>
     </ul>
@@ -90,9 +91,14 @@ function Nav() {
         <div className="flex items-center justify-between text-blue-gray-900">
           <NavLink
             to={"/"}
-            className="mr-4 cursor-pointer text-text text-xl lg:text-2xl py-1.5 font-bold"
+            className="mr-4 cursor-pointer text-text text-xl lg:text-2xl py-1.5 font-bold flex items-center gap-2"
           >
-            Craft <span className="text-primary">Spectrum</span>
+            <div>
+              <img src={logo} alt="" className="w-[40px]" />
+            </div>
+            <div>
+              Craft <span className="text-primary dark:text-primary">Spectrum</span>
+            </div>
           </NavLink>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>

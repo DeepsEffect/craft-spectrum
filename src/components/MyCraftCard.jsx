@@ -57,40 +57,37 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
   };
 
   return (
-    <Card className="w-full">
-      <CardHeader shadow={false} floated={false} className="h-96">
+    <Card className="w-full bg-background border">
+      <CardHeader shadow={false} floated={false} className="h-96 ">
         <img
           src={image}
           alt="card-image"
           className="h-full w-full object-cover"
         />
       </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
+      <CardBody className="text-text dark:text-text">
+        <div className="mb-2 flex items-center justify-between ">
+          <Typography className="font-medium">
             {item_name}
           </Typography>
-          <Typography color="blue-gray" className="font-medium">
+          <Typography className="font-medium">
             ${price}
           </Typography>
         </div>
         <Typography
           variant="small"
-          color="gray"
           className="font-normal opacity-75"
         >
           {short_description}
         </Typography>
         <Typography
           variant="small"
-          color="gray"
-          className="font-normal opacity-75"
+          className="font-normal opacity-75 "
         >
           Customization: {customization}
         </Typography>
         <Typography
           variant="small"
-          color="gray"
           className="font-normal opacity-75"
         >
           {stock_status}
@@ -102,7 +99,7 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
             ripple={false}
             fullWidth={true}
             color="blue"
-            className=" shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            className=" shadow-none dark:text-text bg-primary dark:bg-primary hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             View Details
           </Button>
@@ -112,7 +109,7 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
             ripple={false}
             color={"amber"}
             fullWidth={true}
-            className=" shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            className=" shadow-none text-white dark:text-text bg-secondary dark:bg-secondary hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             Update
           </Button>
@@ -123,7 +120,7 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
           ripple={false}
           color="red"
           fullWidth={true}
-          className="shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+          className="shadow-none dark:text-text hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
         >
           delete
         </Button>

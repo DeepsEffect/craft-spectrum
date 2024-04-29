@@ -8,7 +8,12 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { ScrollRestoration, useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import {
+  ScrollRestoration,
+  useLoaderData,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 const UpdateCraft = () => {
   const crafts = useLoaderData();
@@ -83,12 +88,15 @@ const UpdateCraft = () => {
       <Card
         color="transparent"
         shadow={false}
-        className="flex items-center mt-4 lg:mt-8"
+        className="flex items-center mt-4 lg:mt-20"
       >
-        <Typography variant="h4" color="blue-gray">
+        <Typography variant="h4" className="text-text dark:text-text">
           Update Craft
         </Typography>
-        <Typography color="gray" className="mt-1 font-normal">
+        <Typography
+          color="gray"
+          className="mt-1 font-normal text-text dark:text-text"
+        >
           Please edit the form to update
         </Typography>
         {/* form section */}
@@ -99,7 +107,7 @@ const UpdateCraft = () => {
         ) : (
           <form
             onSubmit={handleUpdateCraft}
-            className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 "
+            className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
           >
             <div className="mb-1 flex-row lg:flex justify-center items-center gap-6 ">
               {/* section left */}
@@ -111,6 +119,7 @@ const UpdateCraft = () => {
                   name="image"
                   label="Image Url"
                   placeholder="Image Url"
+                  className="text-text dark:text-text"
                 />
 
                 {/* item name */}
@@ -120,6 +129,7 @@ const UpdateCraft = () => {
                   label="Item Name"
                   variant="outlined"
                   placeholder="Item name"
+                  className="text-text dark:text-text"
                 />
 
                 {/* subcategory name */}
@@ -147,6 +157,7 @@ const UpdateCraft = () => {
                   label="Short Description"
                   name="short_description"
                   placeholder="Short Description"
+                  className="text-text dark:text-text"
                 />
               </section>
 
@@ -160,6 +171,7 @@ const UpdateCraft = () => {
                   type="number"
                   name="price"
                   placeholder="Price"
+                  className="text-text dark:text-text"
                 />
 
                 {/* rating */}
@@ -193,6 +205,7 @@ const UpdateCraft = () => {
                   variant="outlined"
                   label="Processing Time"
                   name="processing_time"
+                  className="text-text dark:text-text"
                 />
 
                 {/* stock status */}
@@ -208,7 +221,11 @@ const UpdateCraft = () => {
               </section>
             </div>
 
-            <Button type="submit" className="mt-6" fullWidth>
+            <Button
+              type="submit"
+              className="mt-6 bg-primary dark:bg-primary"
+              fullWidth
+            >
               Update Craft Item
             </Button>
           </form>

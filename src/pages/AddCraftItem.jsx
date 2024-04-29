@@ -67,12 +67,15 @@ const AddCraftItem = () => {
       <Card
         color="transparent"
         shadow={false}
-        className="flex items-center mt-4 lg:mt-8 justify-center "
+        className="flex items-center mt-4 lg:mt-20 justify-center "
       >
-        <Typography variant="h4" color="blue-gray">
+        <Typography variant="h4" className="text-text dark:text-text">
           Add Craft
         </Typography>
-        <Typography color="gray" className="mt-1 font-normal">
+        <Typography
+          color="gray"
+          className="mt-1 font-normal text-text dark:text-text"
+        >
           Please fill the form to add a craft
         </Typography>
         {/* form section */}
@@ -80,7 +83,7 @@ const AddCraftItem = () => {
           onSubmit={handleAddCraft}
           className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 "
         >
-          <div className="mb-1 flex-row lg:flex justify-center items-center gap-6 ">
+          <div className="mb-1 flex-row lg:flex justify-center items-center gap-6">
             {/* section left */}
             <section className="mb-1 flex flex-col gap-6">
               {/* image input */}
@@ -89,6 +92,7 @@ const AddCraftItem = () => {
                 name="image"
                 label="Image Url"
                 placeholder="Image Url"
+                className="text-text dark:text-text"
               />
 
               {/* item name */}
@@ -97,6 +101,7 @@ const AddCraftItem = () => {
                 label="Item Name"
                 variant="outlined"
                 placeholder="Item name"
+                className="text-text dark:text-text"
               />
 
               {/* subcategory name */}
@@ -122,6 +127,7 @@ const AddCraftItem = () => {
                 label="Short Description"
                 name="short_description"
                 placeholder="Short Description"
+                className="text-text dark:text-text"
               />
 
               {/* price */}
@@ -131,6 +137,7 @@ const AddCraftItem = () => {
                 type="number"
                 name="price"
                 placeholder="Price"
+                className="text-text dark:text-text"
               />
             </section>
 
@@ -163,6 +170,7 @@ const AddCraftItem = () => {
                 variant="outlined"
                 label="Processing Time"
                 name="processing_time"
+                className="text-text dark:text-text"
               />
 
               {/* stock status */}
@@ -183,6 +191,7 @@ const AddCraftItem = () => {
                 name="username"
                 defaultValue={user.displayName}
                 placeholder="Username"
+                className="text-text dark:text-text"
               />
               <div className=" mb-1 flex flex-col gap-6 mt-4">
                 <Input
@@ -192,12 +201,17 @@ const AddCraftItem = () => {
                   defaultValue={user.email}
                   name="email"
                   placeholder="user@gmail.com"
+                  className="text-text dark:text-text"
                 />
               </div>
             </section>
           </div>
 
-          <Button type="submit" className="mt-6" fullWidth>
+          <Button
+            type="submit"
+            className="mt-6 bg-primary dark:bg-primary"
+            fullWidth
+          >
             Add Craft Item
           </Button>
         </form>
