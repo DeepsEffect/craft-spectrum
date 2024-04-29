@@ -15,6 +15,7 @@ const MyArtAndCraft = () => {
   const { user } = useContext(AuthContext);
   const [crafts, setCrafts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     setLoading(true);
@@ -26,7 +27,16 @@ const MyArtAndCraft = () => {
       });
   }, [user.email]);
 
+  const handleCustomizationFilter = (selectedFilter) => {
+    setFilter(selectedFilter);
+  };
+
   // console.log(crafts);
+  const filteredCraft =
+    filter === "all"
+      ? crafts
+      : crafts.filter((craft) => craft.customization === filter);
+  // console.log(filteredCraft);
 
   return (
     <div>
@@ -38,8 +48,15 @@ const MyArtAndCraft = () => {
             <Button>Customization</Button>
           </MenuHandler>
           <MenuList>
-            <MenuItem>Yes</MenuItem>
-            <MenuItem>No</MenuItem>
+            <MenuItem onClick={() => handleCustomizationFilter("all")}>
+              All
+            </MenuItem>
+            <MenuItem onClick={() => handleCustomizationFilter("yes")}>
+              Yes
+            </MenuItem>
+            <MenuItem onClick={() => handleCustomizationFilter("no")}>
+              No
+            </MenuItem>
           </MenuList>
         </Menu>
       </div>
@@ -49,14 +66,21 @@ const MyArtAndCraft = () => {
         </div>
       ) : (
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-20 mt-10">
-          {crafts.map((craft) => (
-            <MyCraftCard
-              setCrafts={setCrafts}
-              craft={craft}
-              crafts={crafts}
-              key={craft._id}
-            ></MyCraftCard>
-          ))}
+          {filteredCraft.length === 0 ? (
+            <p className="col-span-3 text-center">No crafts found.</p>
+          ) : (
+            <>
+              {" "}
+              {filteredCraft.map((craft) => (
+                <MyCraftCard
+                  setCrafts={setCrafts}
+                  craft={craft}
+                  crafts={crafts}
+                  key={craft._id}
+                ></MyCraftCard>
+              ))}
+            </>
+          )}
           {crafts.length === 0 && (
             <p className="col-span-3 text-center">
               You haven&apos;t added any items yet.

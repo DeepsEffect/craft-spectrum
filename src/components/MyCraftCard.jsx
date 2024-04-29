@@ -56,9 +56,6 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
     });
   };
 
-  // console.log(crafts);
-  
-
   return (
     <Card className="w-full">
       <CardHeader shadow={false} floated={false} className="h-96">
@@ -83,6 +80,13 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
           className="font-normal opacity-75"
         >
           {short_description}
+        </Typography>
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal opacity-75"
+        >
+          Customization: {customization}
         </Typography>
         <Typography
           variant="small"
