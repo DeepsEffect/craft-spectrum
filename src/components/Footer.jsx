@@ -50,7 +50,7 @@ export function Footer() {
         </div>
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <Typography
-            className="mb-4 text-center font-normal text-primary dark:text-text md:mb-0"
+            className="mb-4 text-center font-normal text-text dark:text-text md:mb-0"
           >
             &copy; {currentYear} Craft Spectrum. All Rights Reserved.
           </Typography>

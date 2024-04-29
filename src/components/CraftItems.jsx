@@ -23,6 +23,7 @@ const CraftItems = ({ crafts }) => {
                 "Glass Dying & staining",
               ]}
               cursor
+              loop={0}
               cursorStyle={"|"}
               typeSpeed={100}
               deleteSpeed={30}
@@ -45,7 +46,7 @@ const CraftItems = ({ crafts }) => {
         ))}
       </section>
       <Link to={"/allArtAndCraft"}>
-        <Button className="mx-auto border flex justify-center mt-6 ">
+        <Button className="mx-auto bg-accent flex justify-center mt-6 ">
           View All Crafts
         </Button>
       </Link>
