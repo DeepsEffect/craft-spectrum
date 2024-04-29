@@ -16,6 +16,7 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { RxAvatar } from "react-icons/rx";
+import toast from "react-hot-toast";
 
 function Nav() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -32,7 +33,8 @@ function Nav() {
   const handleSignOut = () => {
     LogOut()
       .then(() => {
-        console.log("logout successful");
+        // console.log("logout successful");
+        toast.success("Logout Successful");
       })
       .catch((error) => {
         console.error(error);
@@ -84,7 +86,7 @@ function Nav() {
 
   return (
     <div className="overflow-hidden sticky lg:top-4 z-10 lg:container mx-auto">
-      <Navbar className="h-max dark:bg-transparent dark:bg-opacity-75 max-w-full lg:rounded-xl px-4 py-2 lg:px-8 lg:py-4 ">
+      <Navbar className="h-max overflow-hidden min-h-[82px] dark:bg-transparent dark:bg-opacity-75 max-w-full lg:rounded-xl px-4 py-2 lg:px-8 lg:py-4 ">
         <div className="flex items-center justify-between text-blue-gray-900">
           <NavLink
             to={"/"}

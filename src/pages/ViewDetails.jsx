@@ -27,10 +27,10 @@ const ViewDetails = () => {
   return (
     <div>
       <ScrollRestoration></ScrollRestoration>
-      <h3 className="text-center text-4xl font-medium">
+      <h3 className="text-center text-4xl font-medium mt-20">
         Detailed View Of {item_name}
       </h3>
-      <Card className="w-full px-10 group max-w-5xl border border-blue-gray-600 flex-row items-center mx-auto mt-6">
+      <Card className="w-full px-10 group max-w-5xl border border-primary bg-background flex-row items-center mx-auto mt-6">
         <CardHeader
           shadow={false}
           floated={false}
@@ -42,32 +42,28 @@ const ViewDetails = () => {
             className="w-full h-[500px] object-cover transition ease-in-out group-hover:scale-105"
           />
         </CardHeader>
-        <CardBody>
-          <Typography variant="h6" color="gray" className="mb-4 uppercase">
+        <CardBody className="text-text dark:text-text">
+          <Typography variant="h6" className="mb-4 uppercase">
             {subcategory_name}
           </Typography>
-          <Typography variant="h4" color="blue-gray" className="mb-2">
+          <Typography variant="h4" className="mb-2">
             {item_name}
           </Typography>
-          <Typography color="gray" className="mb-8 font-base">
+          <Typography className="mb-8 font-base">
             Description: {short_description}
           </Typography>
-          <Typography color="gray" className="mb-4 font-medium">
-            Price: {price}
-          </Typography>
-          <Typography color="gray" className="mb-4 font-medium">
-            Rating: {rating}
-          </Typography>
-          <Typography color="gray" className="mb-4 font-medium">
+          <Typography className="mb-4 font-medium">Price: {price}</Typography>
+          <Typography className="mb-4 font-medium">Rating: {rating}</Typography>
+          <Typography className="mb-4 font-medium">
             Customization: {customization}
           </Typography>
-          <Typography color="gray" className="mb-4 font-medium">
+          <Typography className="mb-4 font-medium">
             Processing Time: {processing_time}
           </Typography>
-          <Typography color="gray" className="mb-4 font-medium">
+          <Typography className="mb-4 font-medium">
             Stock Status: {stock_status}
           </Typography>
-          <Typography color="gray" className="mb-4 font-medium">
+          <Typography className="mb-4 font-medium">
             Added By: {email}
           </Typography>
           <Link to={"/"} className="inline-block">
