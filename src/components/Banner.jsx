@@ -1,4 +1,5 @@
 import { Carousel, Typography } from "@material-tailwind/react";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export default function Banner() {
   return (
@@ -15,19 +16,21 @@ export default function Banner() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-2xl font-frank md:text-4xl lg:text-5xl"
+              className="mb-4 text-xl font-frank md:text-4xl lg:text-5xl"
             >
-              Explore the Palette of Creativity
+              <Slide direction="down">Explore the Palette of Creativity</Slide>
             </Typography>
             <Typography
               variant="lead"
               color="white"
-              className="mb-12 opacity-80"
+              className="mb-12 opacity-80 text-md lg:text-xl"
             >
-              Step into the diverse world of Craft Spectrum, where creativity
-              knows no bounds. Discover a spectrum of art and craft
-              subcategories, from traditional to contemporary, and unleash your
-              imagination like never before.
+              <Fade direction="up" duration={2000}>
+                Step into the diverse world of Craft Spectrum, where creativity
+                knows no bounds. Discover a spectrum of art and craft
+                subcategories, from traditional to contemporary, and unleash
+                your imagination like never before.
+              </Fade>
             </Typography>
           </div>
         </div>
@@ -44,20 +47,25 @@ export default function Banner() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-3xl font-frank md:text-4xl lg:text-5xl"
+              className="mb-4 text-xl font-frank md:text-4xl lg:text-5xl"
             >
-              Handmade Creations for Every Passion
+              <Slide direction="down">
+                Handmade Creations for Every Passion
+              </Slide>
             </Typography>
             <Typography
               variant="lead"
               color="white"
-              className="mb-12 opacity-80"
+              className="mb-12 opacity-80 text-md lg:text-xl"
             >
-              Immerse yourself in a world of handmade wonders. Discover unique
-              creations crafted with passion and precision by artisans from
-              around the globe. Whether you&apos;re a seasoned crafter or just
-              starting your journey, find the perfect project to bring your
-              vision to life.
+              <Fade direction="up" duration={2000}>
+                {" "}
+                Immerse yourself in a world of handmade wonders. Discover unique
+                creations crafted with passion and precision by artisans from
+                around the globe. Whether you&apos;re a seasoned crafter or just
+                starting your journey, find the perfect project to bring your
+                vision to life.
+              </Fade>
             </Typography>
           </div>
         </div>
@@ -74,19 +82,23 @@ export default function Banner() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 font-frank text-3xl md:text-4xl lg:text-5xl"
+              className="mb-4 font-frank text-xl md:text-4xl lg:text-5xl"
             >
-              Your Gateway to Artistic Exploration
+              <Slide direction="down">
+                Your Gateway to Artistic Exploration
+              </Slide>
             </Typography>
             <Typography
               variant="lead"
               color="white"
-              className="mb-12 opacity-80"
+              className="mb-12 opacity-80 text-md lg:text-xl"
             >
-              Craft Spectrum invites you to embark on an immersive journey of
-              artistic exploration. Delve into an array of art and craft
-              subcategories, curated to ignite your creativity and inspire your
-              next masterpiece.
+              <Fade direction="up" duration={2000}>
+                Craft Spectrum invites you to embark on an immersive journey of
+                artistic exploration. Delve into an array of art and craft
+                subcategories, curated to ignite your creativity and inspire
+                your next masterpiece.
+              </Fade>
             </Typography>
           </div>
         </div>
