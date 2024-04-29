@@ -103,18 +103,18 @@ function Register() {
       color="transparent"
       shadow={false}
     >
-      <Typography variant="h4" color="blue-gray">
+      <Typography variant="h4" className="text-text dark:text-text">
         Sign Up
       </Typography>
-      <Typography color="gray" className="mt-1 font-normal">
+      <Typography color="gray" className="mt-1 font-normal text-text dark:text-text">
         Nice to meet you! Enter your details to register.
       </Typography>
       <form
         onSubmit={handleRegisterUser}
-        className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+        className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 "
       >
-        <div className="mb-1 flex flex-col gap-6">
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
+        <div className="mb-1 flex flex-col gap-6 text-text dark:text-text">
+          <Typography variant="h6" className="-mb-3">
             Your Name
           </Typography>
           <Input
@@ -122,12 +122,12 @@ function Register() {
             required
             name="name"
             placeholder="name@mail.com"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            className=" !border-t-blue-gray-200 focus:!border-text text-text dark:text-text"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
           />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
+          <Typography variant="h6" className="-mb-3">
             Your Email
           </Typography>
           <Input
@@ -135,24 +135,24 @@ function Register() {
             size="lg"
             name="email"
             placeholder="name@mail.com"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 text-text dark:text-text"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
           />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
+          <Typography variant="h6" className="-mb-3">
             Your Photo Url (optional)
           </Typography>
           <Input
             size="lg"
             name="photo"
             placeholder="https://photourl.com"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 text-text dark:text-text"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
           />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
+          <Typography variant="h6" className="-mb-3">
             Password
           </Typography>
           <Input
@@ -161,7 +161,7 @@ function Register() {
             type="password"
             size="lg"
             placeholder="********"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 text-text dark:text-text"
             labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -172,12 +172,12 @@ function Register() {
             <Typography
               variant="small"
               color="gray"
-              className="flex items-center font-normal"
+              className="flex items-center font-normal text-text dark:text-text"
             >
               I agree the
               <a
                 href="#"
-                className="font-medium transition-colors hover:text-gray-900"
+                className="font-medium transition-colors hover:text-gray-900 text-text dark:text-text"
               >
                 &nbsp;Terms and Conditions
               </a>
@@ -187,19 +187,19 @@ function Register() {
         />
         {/* sign up with google and github */}
         <Typography className="flex gap-4 justify-center">
-          <Button onClick={handleSignInWithGoogle} className="cursor-pointer">
+          <Button onClick={handleSignInWithGoogle} className="bg-accent dark:bg-accent">
             <FaGoogle className="text-2xl" />
           </Button>
-          <Button onClick={handleSignInWithGitHub}>
+          <Button onClick={handleSignInWithGitHub} className="bg-accent dark:bg-accent">
             <FaGithub className="text-2xl" />
           </Button>
         </Typography>
-        <Button type="submit" className="mt-6" fullWidth>
+        <Button type="submit" className="mt-6 bg-primary dark:bg-primary" fullWidth>
           Register
         </Button>
-        <Typography color="gray" className="mt-4 text-center font-normal">
+        <Typography color="gray" className="mt-4 text-center font-normal text-text dark:text-text">
           Already have an account?{" "}
-          <Link to={"/login"} className="font-medium text-gray-900">
+          <Link to={"/login"} className="font-medium text-gray-900 text-text dark:text-text">
             Login
           </Link>
         </Typography>

@@ -71,40 +71,57 @@ function Login() {
   };
 
   return (
-    <Card className=" w-full lg:w-96 border-2 mx-auto mt-12 lg:mt-20">
+    <Card className=" w-full lg:w-96 border-2 mx-auto mt-12 bg-background lg:mt-20">
       <ScrollRestoration></ScrollRestoration>
       <form onSubmit={handleLoginUser}>
-        <CardHeader
-          variant="gradient"
-          color="gray"
-          className="mb-4 grid h-28 place-items-center"
-        >
-          <Typography variant="h3" color="white">
+        <CardHeader className="mb-4 grid h-28 place-items-center bg-primary dark:bg-primary">
+          <Typography variant="h3" className=" text-white dark:text-text">
             Sign In
           </Typography>
         </CardHeader>
-        <CardBody className="flex flex-col gap-4">
-          <Input label="Email" name="email" size="lg" />
-          <Input label="Password" name="password" size="lg" />
+        <CardBody className="flex flex-col gap-4 dark:text-white ">
+          <Input
+            label="Email"
+            name="email"
+            size="lg"
+            className="text-text"
+            color="deep-purple"
+          />
+          <Input
+            label="Password"
+            name="password"
+            size="lg"
+            color="deep-purple"
+          />
           <div className="-ml-2.5">
             <Checkbox label="Remember Me" />
           </div>
         </CardBody>
-        <Button type="submit" variant="gradient" fullWidth>
+        <Button type="submit" className="bg-primary" fullWidth>
           Login
         </Button>
+
         {/* sign up with google and github */}
         <Typography className="flex gap-4 justify-center mt-6">
-          <Button onClick={handleSignInWithGoogle} className="cursor-pointer">
+          <Button
+            onClick={handleSignInWithGoogle}
+            className="bg-accent dark:bg-accent"
+          >
             <FaGoogle className="text-2xl" />
           </Button>
-          <Button onClick={handleSignInWithGitHub}>
-            <FaGithub className="text-2xl" />
+          <Button
+            onClick={handleSignInWithGitHub}
+            className="bg-accent dark:bg-accent"
+          >
+            <FaGithub className="text-2xl " />
           </Button>
         </Typography>
       </form>
       <CardFooter className="pt-0">
-        <Typography variant="small" className="mt-6 flex justify-center">
+        <Typography
+          variant="small"
+          className="mt-6 flex justify-center text-text dark:text-text"
+        >
           Don&apos;t have an account?
           <Link
             to={"/register"}
