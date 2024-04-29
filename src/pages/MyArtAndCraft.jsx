@@ -1,7 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { MyCraftCard } from "../components/MyCraftCard";
-import { Button, Spinner } from "@material-tailwind/react";
+import {
+  Button,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  Spinner,
+} from "@material-tailwind/react";
 import { Link, ScrollRestoration } from "react-router-dom";
 
 const MyArtAndCraft = () => {
@@ -25,6 +32,17 @@ const MyArtAndCraft = () => {
     <div>
       <ScrollRestoration></ScrollRestoration>
       <h2 className="text-center text-2xl">My art and craft</h2>
+      <div className="flex justify-center mt-6">
+        <Menu>
+          <MenuHandler>
+            <Button>Customization</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Yes</MenuItem>
+            <MenuItem>No</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
       {loading ? (
         <div className="flex justify-center items-center mt-8">
           <Spinner size={24} />

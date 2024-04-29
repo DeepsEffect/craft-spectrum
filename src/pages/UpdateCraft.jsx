@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { ScrollRestoration, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 
 const UpdateCraft = () => {
   const crafts = useLoaderData();
@@ -79,6 +79,7 @@ const UpdateCraft = () => {
 
   return (
     <div className="mx-auto">
+      <ScrollRestoration></ScrollRestoration>
       <Card
         color="transparent"
         shadow={false}

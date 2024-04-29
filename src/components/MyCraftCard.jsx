@@ -15,15 +15,10 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
     _id,
     image,
     item_name,
-    subcategory_name,
     short_description,
     price,
-    rating,
     customization,
-    processing_time,
     stock_status,
-    email,
-    username,
   } = craft;
 
   //handle delete
@@ -60,6 +55,9 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
       }
     });
   };
+
+  // console.log(crafts);
+  
 
   return (
     <Card className="w-full">
@@ -99,7 +97,8 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
           <Button
             ripple={false}
             fullWidth={true}
-            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            color="blue"
+            className=" shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             View Details
           </Button>
@@ -107,8 +106,9 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
         <Link to={`/updateCraft/${_id}`}>
           <Button
             ripple={false}
+            color={"amber"}
             fullWidth={true}
-            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            className=" shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             Update
           </Button>
@@ -117,8 +117,9 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
         <Button
           onClick={() => handleDeleteCraftItem(_id)}
           ripple={false}
+          color="red"
           fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+          className="shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
         >
           delete
         </Button>
