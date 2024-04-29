@@ -7,7 +7,9 @@ const Home = () => {
 
   return (
     <div>
-      <Banner></Banner>
+      <div className="lg:-mt-[82px]">
+        <Banner></Banner>
+      </div>
       <CraftItems crafts={crafts}></CraftItems>
     </div>
   );

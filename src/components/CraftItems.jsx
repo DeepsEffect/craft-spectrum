@@ -10,9 +10,9 @@ const CraftItems = ({ crafts }) => {
     <div className="text-black">
       {/* header section */}
       <section className="text-center max-w-xl mx-auto mt-10">
-        <h2 className="text-2xl font-semibold lg:text-3xl">
+        <h2 className="text-2xl font-semibold lg:text-3xl text-text dark:text-text">
           Discover Our Handmade{" "}
-          <span className="text-blue-gray-600">
+          <span className="text-primary">
             <Typewriter
               words={[
                 "Card Making",
@@ -23,7 +23,6 @@ const CraftItems = ({ crafts }) => {
                 "Glass Dying & staining",
               ]}
               cursor
-              loop={6}
               cursorStyle={"|"}
               typeSpeed={100}
               deleteSpeed={30}
@@ -31,7 +30,7 @@ const CraftItems = ({ crafts }) => {
           </span>
         </h2>
         <Fade duration={2000}>
-          <p>
+          <p className="text-text dark:text-text">
             Explore our curated collection of artisanal craft items,
             meticulously crafted to inspire and delight. From charming trinkets
             to stunning decor pieces, each creation tells a story of
@@ -46,7 +45,7 @@ const CraftItems = ({ crafts }) => {
         ))}
       </section>
       <Link to={"/allArtAndCraft"}>
-        <Button className="mx-auto border flex justify-center mt-6">
+        <Button className="mx-auto border flex justify-center mt-6 ">
           View All Crafts
         </Button>
       </Link>

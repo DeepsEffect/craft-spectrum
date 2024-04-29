@@ -21,7 +21,7 @@ export function CraftCards({ crafts, email }) {
   } = crafts;
 
   return (
-    <Card className="w-full group">
+    <Card className="w-full group dark:bg-background dark:border">
       <CardHeader shadow={false} floated={false} className="h-96">
         <img
           src={image}
@@ -33,32 +33,32 @@ export function CraftCards({ crafts, email }) {
         <div className="mb-2 flex items-center justify-between">
           <Typography
             color="blue-gray"
-            className="font-medium text-2xl font-frank"
+            className="font-medium text-2xl font-frank text-text dark:text-text"
           >
             {item_name}
           </Typography>
-          <Typography color="blue-gray" className="font-medium">
+          <Typography color="blue-gray" className="font-medium text-text dark:text-text">
             {price}
           </Typography>
         </div>
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-75"
+          className="font-normal opacity-75 text-text dark:text-text"
         >
           {short_description}
         </Typography>
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-75"
+          className="font-normal opacity-75 text-text dark:text-text"
         >
           Ratings: {rating}
         </Typography>
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-75"
+          className="font-normal opacity-75 text-text dark:text-text"
         >
           {stock_status}
         </Typography>
@@ -66,7 +66,7 @@ export function CraftCards({ crafts, email }) {
           <Typography
             variant="small"
             color="gray"
-            className="font-normal opacity-75"
+            className="font-normal opacity-75 text-text dark:text-text"
           >
             added by: {email}
           </Typography>
@@ -77,7 +77,7 @@ export function CraftCards({ crafts, email }) {
           <Button
             ripple={false}
             fullWidth={true}
-            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            className=" dark:text-text bg-primary dark:bg-primary shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             View Details
           </Button>

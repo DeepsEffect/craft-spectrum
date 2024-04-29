@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Nav.css";
 import {
   Navbar,
@@ -11,6 +11,7 @@ import {
   MenuList,
   MenuItem,
   MenuHandler,
+  Switch,
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
@@ -38,38 +39,56 @@ function Nav() {
       });
   };
 
+  //theming
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <li className="p-1 text-black font-normal">
+      <li className="p-1 text-text font-normal">
         <NavLink to={"/"} className="flex items-center">
           Home
         </NavLink>
       </li>
-      <li className="p-1 text-black font-normal">
+      <li className="p-1 text-text font-normal">
         <NavLink to={"/allArtAndCraft"} className="flex items-center">
           All Art & craft
         </NavLink>
       </li>
-      <li className="p-1 text-black font-normal">
+      <li className="p-1 text-text font-normal">
         <NavLink to={"/addCraftItem"} className="flex items-center">
           Add Craft Item
         </NavLink>
       </li>
-      <li className="p-1 text-black font-normal">
+      <li className="p-1 text-text font-normal">
         <NavLink to={"/myArtAndCraft"} className="flex items-center">
           My Art&Craft List
         </NavLink>
+      </li>
+      <li className="p-1 text-text font-normal flex items-center gap-2">
+        <Switch onClick={handleThemeSwitch} />
+        dark mode
       </li>
     </ul>
   );
 
   return (
-    <div className="overflow-hidden sticky top-0 z-10 ">
-      <Navbar className="h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 ">
+    <div className="overflow-hidden sticky lg:top-4 z-10 lg:container mx-auto">
+      <Navbar className="h-max dark:bg-transparent dark:bg-opacity-75 max-w-full lg:rounded-xl px-4 py-2 lg:px-8 lg:py-4 ">
         <div className="flex items-center justify-between text-blue-gray-900">
           <NavLink
             to={"/"}
-            className="mr-4 cursor-pointer text-xl lg:text-2xl py-1.5 font-bold"
+            className="mr-4 cursor-pointer text-text text-xl lg:text-2xl py-1.5 font-bold"
           >
             Craft Spectrum
           </NavLink>

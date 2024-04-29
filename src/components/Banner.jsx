@@ -9,7 +9,7 @@ export default function Banner() {
         <img
           src="https://images.unsplash.com/photo-1607346705566-b2b5048ae44a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="image 1"
-          className="h-[400px] lg:h-[800px] w-full object-cover"
+          className="h-[400px] lg:min-h-screen w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/65">
           <div className="w-3/4 text-center md:w-2/4">
@@ -40,7 +40,7 @@ export default function Banner() {
         <img
           src="https://images.unsplash.com/photo-1525606846543-2b3c14f8e18f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="image 1"
-          className="h-[400px] lg:h-[800px] w-full object-cover"
+          className="h-[400px] lg:min-h-screen w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/65">
           <div className="w-3/4 text-center md:w-2/4">
@@ -74,7 +74,7 @@ export default function Banner() {
         <img
           src="https://images.unsplash.com/photo-1605700311233-cbef0730016a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="image 1"
-          className="h-[400px] lg:h-[800px] w-full object-cover"
+          className="h-[400px] lg:min-h-screen w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/65">
           <div className="w-3/4 text-center md:w-2/4">

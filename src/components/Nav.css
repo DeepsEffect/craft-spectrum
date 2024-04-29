@@ -16,7 +16,7 @@ li a::after {
 li a:hover::after,
 li a.active::after {
   width: 100%;
-  background-color: #6c10bc;
+  background-color: #814cc8;
 }
 
 li a.active {
