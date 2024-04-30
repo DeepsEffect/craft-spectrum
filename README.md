@@ -18,3 +18,5 @@ Live Site: [Craft-spectrum](https://deepseffect-craft-spectrum.web.app)
 - sweetalert2: Beautiful and customizable alert dialogs for enhancing user experience.
 - react-simple-typewriter: Add dynamic typewriter effects to your text for an engaging UI.
 - react-icons: Access a vast collection of icons for enhancing the visual appeal of your website.
+- react-awesome-reveal: reveals the components in a fun and interesting way, way better than animate.css :)
+
