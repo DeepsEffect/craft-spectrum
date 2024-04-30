@@ -43,7 +43,28 @@ function Nav() {
   };
 
   //theming
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || null);
+
+  // update the theme preference in local storage
+  const updateThemePreference = (newTheme) => {
+    localStorage.setItem("theme", newTheme);
+  };
+
+  //checking the user theme preference
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+    }
+  }, []);
+
+  //theme setup
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -52,8 +73,11 @@ function Nav() {
     }
   }, [theme]);
 
+  //theme switch handler
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    updateThemePreference(newTheme);
   };
 
   const navList = (
@@ -79,7 +103,12 @@ function Nav() {
         </NavLink>
       </li>
       <li className="p-1 text-text font-normal flex items-center gap-2">
-        <Switch onClick={handleThemeSwitch} color="purple" />
+        <Switch
+          checked={theme === "dark"}
+          onChange={handleThemeSwitch}
+          color="purple"
+          inputProps={{ "aria-label": "toggle dark mode" }}
+        />
         dark mode
       </li>
     </ul>
@@ -97,7 +126,8 @@ function Nav() {
               <img src={logo} alt="" className="w-[40px]" />
             </div>
             <div>
-              Craft <span className="text-primary dark:text-primary">Spectrum</span>
+              Craft{" "}
+              <span className="text-primary dark:text-primary">Spectrum</span>
             </div>
           </NavLink>
           <div className="flex items-center gap-4">
