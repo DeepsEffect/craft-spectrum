@@ -10,7 +10,7 @@ const CraftItems = ({ crafts }) => {
     <div className="text-black">
       {/* header section */}
       <section className="text-center lg:max-w-2xl mx-auto mt-10">
-        <h2 className="text-xl font-semibold lg:text-3xl text-text dark:text-text max-w-4xl border">
+        <h2 className="text-xl font-semibold lg:text-3xl text-text dark:text-text max-w-4xl">
           Discover Our Handmade{" "}
           <span className="text-primary">
             <Typewriter
