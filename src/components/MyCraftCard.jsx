@@ -57,12 +57,12 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
   };
 
   return (
-    <Card className="w-full bg-background border">
+    <Card className="w-full bg-background group border h-[600px] lg:h-[700px]">
       <CardHeader shadow={false} floated={false} className="h-96 ">
         <img
           src={image}
           alt="card-image"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover overflow-hidden transition ease-in-out group-hover:scale-105"
         />
       </CardHeader>
       <CardBody className="text-text dark:text-text">
@@ -83,7 +83,7 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-75 text-text dark:text-text"
+          className="font-normal opacity-75 text-text dark:text-text min-h-16"
         >
           {short_description}
         </Typography>

@@ -24,7 +24,7 @@ export function CraftCards({ crafts, email }) {
 
   return (
     <Fade duration={1500}>
-      <Card className="w-full group dark:bg-background dark:border">
+      <Card className="w-full group dark:bg-background dark:border h-[500px] lg:h-[650px]">
         <CardHeader shadow={false} floated={false} className="h-96">
           <img
             src={image}
@@ -47,13 +47,15 @@ export function CraftCards({ crafts, email }) {
               ${price}
             </Typography>
           </div>
+
           <Typography
             variant="small"
             color="gray"
-            className="font-normal opacity-75 text-text dark:text-text min-h-12"
+            className="font-normal opacity-75 text-text dark:text-text min-h-16 "
           >
             {short_description}
           </Typography>
+
           <hr className="mt-2 mb-2" />
           <Typography
             variant="small"
