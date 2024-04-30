@@ -8,6 +8,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Fade } from "react-awesome-reveal";
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export function CraftCards({ crafts, email }) {
@@ -53,19 +54,25 @@ export function CraftCards({ crafts, email }) {
           >
             {short_description}
           </Typography>
+          <hr className="mt-2 mb-2" />
           <Typography
             variant="small"
             color="gray"
-            className="font-normal opacity-75 text-text dark:text-text"
+            className="font-normal opacity-75 text-text dark:text-text flex items-center gap-1"
           >
-            Ratings: {rating}
+            <strong>Ratings:</strong> {rating}
+            <FaStar className="text-md text-amber-500" />
           </Typography>
           <Typography
             variant="small"
             color="gray"
-            className="font-normal opacity-75 text-text dark:text-text"
+            className={
+              stock_status === "In Stock"
+                ? "font-normal opacity-75 text-green-500"
+                : "font-normal opacity-75 text-accent dark:text-accent"
+            }
           >
-            {stock_status}
+            <strong>{stock_status}</strong>
           </Typography>
           {email && (
             <Typography
@@ -73,7 +80,7 @@ export function CraftCards({ crafts, email }) {
               color="gray"
               className="font-normal opacity-75 text-text dark:text-text"
             >
-              added by: {email}
+              <strong> Added By:</strong> {email}
             </Typography>
           )}
         </CardBody>

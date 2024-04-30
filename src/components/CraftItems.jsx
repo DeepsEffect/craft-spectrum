@@ -9,15 +9,16 @@ const CraftItems = ({ crafts }) => {
   return (
     <div className="text-black">
       {/* header section */}
-      <section className="text-center max-w-xl mx-auto mt-10">
-        <h2 className="text-2xl font-semibold lg:text-3xl text-text dark:text-text">
+      <section className="text-center lg:max-w-2xl mx-auto mt-10">
+        <h2 className="text-xl font-semibold lg:text-3xl text-text dark:text-text max-w-4xl border">
           Discover Our Handmade{" "}
           <span className="text-primary">
             <Typewriter
               words={[
                 "Card Making",
                 "Scrapbooking",
-                "Paper Quilling & origami",
+                "Paper Quilling",
+                "origami",
                 "Glass Painting",
                 "Lampwork",
                 "Glass Dying & staining",
@@ -46,8 +47,25 @@ const CraftItems = ({ crafts }) => {
         ))}
       </section>
       <Link to={"/allArtAndCraft"}>
-        <Button className="mx-auto bg-accent flex justify-center mt-6 ">
-          View All Crafts
+        <Button
+          variant="text"
+          className="flex items-center gap-2 mx-auto justify-center mt-6 text-text dark:text-text"
+        >
+          View All Crafts{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-5 w-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            />
+          </svg>
         </Button>
       </Link>
     </div>

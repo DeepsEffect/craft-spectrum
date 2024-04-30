@@ -21,13 +21,13 @@ const ViewDetails = () => {
     stock_status,
     email,
   } = craft;
-  console.log(image);
-  console.log(craft);
+  // console.log(image);
+  // console.log(craft);
 
   return (
     <div>
       <ScrollRestoration></ScrollRestoration>
-      <h3 className="text-center text-4xl font-medium mt-20">
+      <h3 className="text-center text-4xl font-medium mt-20 text-text dark:text-text">
         Detailed View Of {item_name}
       </h3>
       <Card className="w-full lg:px-10 group max-w-5xl lg:border border-primary bg-background flex flex-col lg:flex-row items-center mx-auto mt-6">
@@ -50,21 +50,30 @@ const ViewDetails = () => {
             {item_name}
           </Typography>
           <Typography className="mb-8 font-base">
-            Description: {short_description}
-          </Typography>
-          <Typography className="mb-4 font-medium">Price: {price}</Typography>
-          <Typography className="mb-4 font-medium">Rating: {rating}</Typography>
-          <Typography className="mb-4 font-medium">
-            Customization: {customization}
+            {short_description}
           </Typography>
           <Typography className="mb-4 font-medium">
-            Processing Time: {processing_time}
+            <span className="opacity-75">Price:</span> <strong>{price}</strong>
           </Typography>
           <Typography className="mb-4 font-medium">
-            Stock Status: {stock_status}
+            <span className="opacity-75">Rating:</span>
+            <strong>{rating}</strong>
           </Typography>
           <Typography className="mb-4 font-medium">
-            Added By: {email}
+            <span className="opacity-75">Customization:</span>{" "}
+            <strong>{customization}</strong>
+          </Typography>
+          <Typography className="mb-4 font-medium">
+            <span className="opacity-75">Processing Time:</span>{" "}
+            <strong>{processing_time}</strong>
+          </Typography>
+          <Typography className="mb-4 font-medium">
+            <span className="opacity-75">Stock Status:</span>{" "}
+            <strong>{stock_status}</strong>
+          </Typography>
+          <Typography className="mb-4 font-medium">
+            <span className="opacity-75">Added By:</span>{" "}
+            <strong>{email}</strong>
           </Typography>
           <Link to={"/"} className="inline-block">
             <Button
