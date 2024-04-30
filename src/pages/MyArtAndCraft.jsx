@@ -41,7 +41,7 @@ const MyArtAndCraft = () => {
   return (
     <div>
       <ScrollRestoration></ScrollRestoration>
-      <h2 className="text-center text-2xl mt-6 lg:mt-12">My art and craft</h2>
+      <h2 className="text-center text-2xl mt-6 lg:mt-12 text-text dark:text-text">My art and craft</h2>
       <div className="flex justify-center mt-6">
         <Menu>
           <MenuHandler>
@@ -65,7 +65,7 @@ const MyArtAndCraft = () => {
           <Spinner size={24} />
         </div>
       ) : (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 lg:px-44 mt-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-44 mt-10">
           {filteredCraft.length === 0 ? (
             <p className="col-span-3 text-center text-text dark:text-text">No crafts found.</p>
           ) : (

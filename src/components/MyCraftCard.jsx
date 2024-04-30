@@ -67,30 +67,40 @@ export function MyCraftCard({ craft, crafts, setCrafts }) {
       </CardHeader>
       <CardBody className="text-text dark:text-text">
         <div className="mb-2 flex items-center justify-between ">
-          <Typography className="font-medium">
+          <Typography
+            color="blue-gray"
+            className="font-medium text-2xl font-frank text-text dark:text-text"
+          >
             {item_name}
           </Typography>
-          <Typography className="font-medium">
+          <Typography
+            color="blue-gray"
+            className="font-medium text-text dark:text-text"
+          >
             ${price}
           </Typography>
         </div>
         <Typography
           variant="small"
-          className="font-normal opacity-75"
+          color="gray"
+          className="font-normal opacity-75 text-text dark:text-text"
         >
           {short_description}
         </Typography>
-        <Typography
-          variant="small"
-          className="font-normal opacity-75 "
-        >
-          Customization: {customization}
+        <hr className="mt-2 mb-2" />
+        <Typography className="font-medium text-text dark:text-text">
+          <span className="opacity-75">Customization:</span> {customization}
         </Typography>
         <Typography
           variant="small"
-          className="font-normal opacity-75"
+          color="gray"
+          className={
+            stock_status === "In Stock"
+              ? "font-normal opacity-75 text-green-500"
+              : "font-normal opacity-75 text-accent dark:text-accent"
+          }
         >
-          {stock_status}
+          <strong>{stock_status}</strong>
         </Typography>
       </CardBody>
       <CardFooter className="pt-0 flex flex-col gap-4">

@@ -4,14 +4,16 @@ import {
   Button,
   Typography,
   Textarea,
+  Spinner,
 } from "@material-tailwind/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
 import { ScrollRestoration } from "react-router-dom";
 
 const AddCraftItem = () => {
   const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   //handle add craft
   const handleAddCraft = (e) => {
@@ -44,6 +46,7 @@ const AddCraftItem = () => {
     // console.log(craftItem);
 
     //sending data to the server
+    setLoading(true);
     fetch("https://craft-spectrum-server.vercel.app/crafts", {
       method: "POST",
       headers: {
@@ -57,6 +60,7 @@ const AddCraftItem = () => {
         if (data.insertedId) {
           // console.log("data successfully posted to the Database");
           toast.success("Craft Item Added");
+          setLoading(false);
         }
       });
   };
@@ -69,6 +73,13 @@ const AddCraftItem = () => {
         shadow={false}
         className="flex items-center mt-4 lg:mt-20 justify-center "
       >
+        <p className="flex flex-col items-center justify-center">
+          {loading && (
+            <>
+              <Spinner></Spinner> <br /> adding item...
+            </>
+          )}
+        </p>
         <Typography variant="h4" className="text-text dark:text-text">
           Add Craft
         </Typography>
@@ -88,6 +99,7 @@ const AddCraftItem = () => {
             <section className="mb-1 flex flex-col gap-6">
               {/* image input */}
               <Input
+                required
                 variant="outlined"
                 name="image"
                 label="Image Url"
@@ -97,6 +109,7 @@ const AddCraftItem = () => {
 
               {/* item name */}
               <Input
+                required
                 name="item_name"
                 label="Item Name"
                 variant="outlined"
@@ -106,6 +119,7 @@ const AddCraftItem = () => {
 
               {/* subcategory name */}
               <select
+                required
                 name="subcategory_name"
                 className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               >
@@ -122,6 +136,7 @@ const AddCraftItem = () => {
               </select>
 
               <Textarea
+                required
                 size="lg"
                 variant="outlined"
                 label="Short Description"
@@ -132,6 +147,7 @@ const AddCraftItem = () => {
 
               {/* price */}
               <Input
+                required
                 variant="outlined"
                 label="Price"
                 type="number"
@@ -144,6 +160,7 @@ const AddCraftItem = () => {
             {/* section right */}
             <section className="mb-1 mt-6 flex flex-col gap-6">
               <select
+                required
                 name="rating"
                 className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               >
@@ -157,6 +174,7 @@ const AddCraftItem = () => {
 
               {/* customization */}
               <select
+                required
                 name="customization"
                 className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               >
@@ -167,6 +185,7 @@ const AddCraftItem = () => {
 
               {/* processing time */}
               <Input
+                required
                 variant="outlined"
                 label="Processing Time"
                 name="processing_time"
@@ -175,6 +194,7 @@ const AddCraftItem = () => {
 
               {/* stock status */}
               <select
+                required
                 name="stock_status"
                 className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               >

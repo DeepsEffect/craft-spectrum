@@ -32,11 +32,11 @@ export function CraftCards({ crafts, email }) {
             className="h-full w-full object-cover transition ease-in-out overflow-hidden group-hover:scale-105"
           />
         </CardHeader>
-        <CardBody>
+        <CardBody className="">
           <div className="mb-2 flex items-center justify-between">
             <Typography
               color="blue-gray"
-              className="font-medium text-2xl font-frank text-text dark:text-text"
+              className="font-medium text-2xl font-frank text-text dark:text-text "
             >
               {item_name}
             </Typography>
@@ -44,13 +44,13 @@ export function CraftCards({ crafts, email }) {
               color="blue-gray"
               className="font-medium text-text dark:text-text"
             >
-              {price}
+              ${price}
             </Typography>
           </div>
           <Typography
             variant="small"
             color="gray"
-            className="font-normal opacity-75 text-text dark:text-text"
+            className="font-normal opacity-75 text-text dark:text-text min-h-12"
           >
             {short_description}
           </Typography>

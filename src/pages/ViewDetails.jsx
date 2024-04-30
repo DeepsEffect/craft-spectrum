@@ -27,7 +27,7 @@ const ViewDetails = () => {
   return (
     <div>
       <ScrollRestoration></ScrollRestoration>
-      <h3 className="text-center text-4xl font-medium mt-20 text-text dark:text-text">
+      <h3 className="text-center text-xl lg:text-4xl font-medium mt-6 lg:mt-20 text-text dark:text-text">
         Detailed View Of {item_name}
       </h3>
       <Card className="w-full lg:px-10 group max-w-5xl lg:border border-primary bg-background flex flex-col lg:flex-row items-center mx-auto mt-6">
@@ -53,11 +53,11 @@ const ViewDetails = () => {
             {short_description}
           </Typography>
           <Typography className="mb-4 font-medium">
-            <span className="opacity-75">Price:</span> <strong>{price}</strong>
+            <span className="opacity-75">Price:</span> <strong>${price}</strong>
           </Typography>
           <Typography className="mb-4 font-medium">
             <span className="opacity-75">Rating:</span>
-            <strong>{rating}</strong>
+            <strong> {rating} star</strong>
           </Typography>
           <Typography className="mb-4 font-medium">
             <span className="opacity-75">Customization:</span>{" "}
