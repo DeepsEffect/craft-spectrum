@@ -90,8 +90,10 @@ function Login() {
           <Input
             label="Password"
             name="password"
+            type="password"
             size="lg"
             color="deep-purple"
+            className="text-text"
           />
           <div className="-ml-2.5">
             <Checkbox label="Remember Me" />

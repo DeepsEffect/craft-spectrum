@@ -107,7 +107,7 @@ function Nav() {
           checked={theme === "dark"}
           onChange={handleThemeSwitch}
           color="purple"
-          inputProps={{ "aria-label": "toggle dark mode" }}
+          // inputProps={{ "aria-label": "toggle dark mode" }}
         />
         dark mode
       </li>
@@ -326,7 +326,7 @@ function Nav() {
           {navList}
           {user ? (
             <>
-              <Button onClick={handleSignOut} className="w-full">
+              <Button onClick={handleSignOut} className="w-full" color="red">
                 Logout
               </Button>
             </>
@@ -335,14 +335,14 @@ function Nav() {
               <div className="flex items-center gap-x-1">
                 <div className="w-full">
                   <Link to={"/login"}>
-                    <Button fullWidth variant="text" size="sm" className="">
+                    <Button fullWidth variant="text" size="sm" className="bg-primary dark:bg-primary text-white">
                       <span>Login</span>
                     </Button>
                   </Link>
                 </div>
                 <div className="w-full">
                   <Link to={"/register"}>
-                    <Button fullWidth variant="gradient" size="sm" className="">
+                    <Button fullWidth size="sm" className="bg-secondary dark:bg-secondary">
                       <span>Register</span>
                     </Button>
                   </Link>

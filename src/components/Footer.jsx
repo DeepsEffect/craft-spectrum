@@ -24,7 +24,7 @@ export function Footer() {
       <div className="mx-auto w-full px-8 mt-12 lg:mt-40">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           {/* logo */}
-          <section className="flex flex-col gap-2 items-center justify-center w-[200px] ">
+          <section className="flex flex-col gap-2 items-center justify-center w-[200px] mx-auto lg:mx-0">
             <img src={logo} alt="" className="w-14" />
             <h2 className="mb-6 text-2xl text-text dark:text-text font-semibold">
               Craft Spectrum
